@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "webhook_listener.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/webhook_listener.py" }
+  ]
+}
