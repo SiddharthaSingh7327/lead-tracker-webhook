@@ -1,18 +1,11 @@
-from flask import Flask, request, jsonify
-import logging
-
-from get_emails import AuthManager
-from get_emails import CalendarManager
-from get_emails import GeminiParser
-from email_processor import process_email_by_id
-from config import Config
-from get_emails import FileManager
-
 # ---------------- Setup ----------------
 app = Flask(__name__)
+
+# ---------------- Health Check ----------------
 @app.route("/", methods=["GET"])
 def home():
     return "Webhook is live!", 200
+
 # Logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -48,5 +41,6 @@ def receive_notification():
     return jsonify({"status": "processed"}), 202
 
 # ---------------- Run Server ----------------
-#if __name__ == "__main__":
- #   app.run(host="0.0.0.0", port=5000, debug=True)
+# (Skip this section for Vercel deployment)
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0", port=5000, debug=True)
