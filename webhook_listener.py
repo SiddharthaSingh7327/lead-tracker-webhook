@@ -5,7 +5,7 @@ from get_emails import AuthManager
 from get_emails import CalendarManager
 from get_emails import GeminiParser
 from email_processor import process_email_by_id
-from config import Config
+from get_emails import Config
 from get_emails import FileManager
 
 # ---------------- Setup ----------------
