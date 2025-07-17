@@ -1,3 +1,13 @@
+from flask import Flask, request, jsonify
+import logging
+
+from get_emails import AuthManager
+from get_emails import CalendarManager
+from get_emails import GeminiParser
+from email_processor import process_email_by_id
+from config import Config
+from get_emails import FileManager
+
 # ---------------- Setup ----------------
 app = Flask(__name__)
 
@@ -44,3 +54,4 @@ def receive_notification():
 # (Skip this section for Vercel deployment)
 # if __name__ == "__main__":
 #     app.run(host="0.0.0.0", port=5000, debug=True)
+
