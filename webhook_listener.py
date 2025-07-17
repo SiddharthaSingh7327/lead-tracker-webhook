@@ -10,7 +10,9 @@ from get_emails import FileManager
 
 # ---------------- Setup ----------------
 app = Flask(__name__)
-
+@app.route("/", methods=["GET"])
+def home():
+    return "Webhook is live!", 200
 # Logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
